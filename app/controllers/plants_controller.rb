@@ -38,15 +38,7 @@ class PlantsController < ApplicationController
     redirect_to plants_path
   end
 
-  def review
-    @review = @plant.review
-  end
-
   private
-
-  def find_plant
-    @plant = Plant.find(params[:id])
-  end
 
   def plant_params
     params.require(:plant).permit(:name, :description, :availability, :price)
