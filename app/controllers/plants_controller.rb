@@ -2,6 +2,7 @@
 class PlantsController < ApplicationController
   def index
     @plants = Plant.all
+    @plant = Plant.new
   end
 
   def show
@@ -41,6 +42,10 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :availability, :price)
+    params.require(:plant).permit(:name, :description, :availability, :price, :photo)
   end
 end
+
+# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @article.photo.key, height: 300, crop: :fill %>')">
+#   Cool article
+# </div>
