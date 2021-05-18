@@ -7,6 +7,11 @@
   <% end %>
 </ul>
 
+<% if @plant.errors.messages%>
+<p> Information Missing, Click Again</p>
+<% end %>
+
+
 <a class="btn btn-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1 ">Add a new plant</a>
       <div class="row">
         <div class="col">
