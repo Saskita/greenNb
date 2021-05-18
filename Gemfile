@@ -66,10 +66,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 # datepicker
-gem 'jquery-rails'
-gem 'momentjs-rails'
-gem 'bootstrap-daterangepicker-rails'
 
 # cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+
+# gem pundit
+gem 'pundit'
