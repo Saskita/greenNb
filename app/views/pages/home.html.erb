@@ -1,2 +1,34 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="small-container">
+    <h1>greenNb</h1>
+    <div class="search-duo">
+      <input class="barre-recherche" type="text" name="query" id="query" class="form-control" placeholder="Look for a plant nearby">
+      <input type="submit" name="commit" value="Find" class="btn btn-success" data-disable-with="Rechercher">
+
+    </div>
+</div>
+
+<div class="img-accueil">
+  <h2>RENT A PLANT TO MAKE YOUR INTERIOR GREAT AGAIN</h2>
+  <hr class="ligne">
+  <h3>Cultivate well-being in your apartment <br>without having a green thumb</h3>
+  <a class="btn btn-success btn-rent" href="" target="_blank">
+      Rent a Plant
+  </a>
+</div>
+
+
+
+<div class="container display-plants">
+  <div class="row">
+    <% @plants.each do |plant| %>
+      <div class="col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plant.photos[0] %>');">
+          <div class="card-description">
+            <p><%= plant.name.capitalize %></p>
+          </div>
+          <%= link_to "+", plant_path(plant), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
