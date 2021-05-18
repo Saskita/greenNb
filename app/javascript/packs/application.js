@@ -28,3 +28,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// //////date picker form////////
+
+//= require moment
+//= require daterangepicker
+
