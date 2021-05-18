@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :plants do
+  resources :plants, except: [:new] do
     resources :bookings, only: [ :new, :create ]
   end
   resources :bookings, only: [ :edit, :update ]
