@@ -1,9 +1,9 @@
       <%= simple_form_for @plant do |f| %>
         <%= f.input :name, placeholder: 'Dahlia' %>
         <%= f.input :description, placeholder: 'My plant will make your home green again' %>
-        <%= f.input :availability, as: :select, include_blank: false, collection: ['yes','no'] %>
+        <%= f.input :availability, as: :select, include_blank: false, collection: ['no','yes'] %>
         <%= f.input :price, placeholder: 'price per day' %>
-        <%= f.input :photo, as: :file, label: "Picture of your plant:" %>
+        <%= f.input :photos, as: :file, label: "Picture of your plant:", input_html: { multiple: true } %>
 
         <% button_text = @plant.new_record? ? "Add my plant" : "Edit my plant" %>
         <%= f.submit button_text, class: "btn btn-success border mt-3" %>

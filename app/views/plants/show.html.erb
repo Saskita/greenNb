@@ -1,5 +1,8 @@
 <h2><%= @plant.name %></h2>
 <p><%= @plant.description %></p>
-<%= cl_image_tag plant.photo.key, heigth:200, width:400, crop: :fill %>
+<% @plant.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
+<p><%= link_to "Edit my plant", edit_plant_path%></p>
 <p><%= link_to "Back to plants", plants_path%></p>
