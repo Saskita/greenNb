@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :bookings
-  has_many :plants, through: :bookings
+  has_many :plants, through: :bookings, dependent: :destroy
 end

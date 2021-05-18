@@ -1,8 +1,12 @@
 <h2><%= @plant.name %></h2>
 <p><%= @plant.description %></p>
+<p><%= @plant.price %>€ / jour</p>
 <% @plant.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
 <p><%= link_to "Edit my plant", edit_plant_path%></p>
+<p><%= link_to "Delete my plant", plant_path(@plant), method: :delete, data: { confirm: "Are you sure ?"} %></p>
 <p><%= link_to "Back to plants", plants_path%></p>
+<p><%= link_to "Book this plant", new_plant_booking_path(@plant)%></p>
+

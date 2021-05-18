@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @plant = Plant.find(params[:plant_id])
     @booking.plant = @plant
+    @booking.user = current_user
     if @booking.save
       redirect_to plant_path(@plant)
     else
