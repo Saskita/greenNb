@@ -5,4 +5,5 @@
 <% end %>
 
 <p><%= link_to "Edit my plant", edit_plant_path%></p>
+<p><%= link_to "Delete my plant", plant_path(@plant), method: :delete, data: { confirm: "Are you sure ?"} %></p>
 <p><%= link_to "Back to plants", plants_path%></p>
