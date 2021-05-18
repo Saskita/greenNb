@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :plants do
-    resources :bookings, only: [ :new, :create, :show, :edit, :update ]
+    resources :bookings, only: [ :new, :create ]
   end
+  resources :bookings, only: [ :edit, :update ]
 
   devise_for :users
   root to: 'pages#home'
