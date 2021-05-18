@@ -2,10 +2,12 @@ class BookingsController < ApplicationController
   def new
     @plant = Plant.find(params[:plant_id])
     @booking = Booking.new
+    authorize(@plant)
   end
 
   def create
     @booking = Booking.new(booking_params)
+    authorize(@booking)
     @plant = Plant.find(params[:plant_id])
     @booking.plant = @plant
     @booking.user = current_user
