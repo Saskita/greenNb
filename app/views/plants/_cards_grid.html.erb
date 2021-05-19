@@ -2,7 +2,7 @@
   <div class="row">
     <% plants.each do |plant| %>
       <div class="col-sm-4">
-        <div class="card" style="background-image:  linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= plant.photos[0].url %>');">
+        <div class="card">
           <div class="card-description">
             <p><strong><%= plant.name.capitalize %></strong></p>
           </div>
