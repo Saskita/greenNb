@@ -1,4 +1,4 @@
-<div class="container display-plants">
+<div class="display-plants mt-2">
   <div class="row">
     <% plants.each do |plant| %>
       <div class="col-sm-4">
@@ -6,7 +6,10 @@
           <div class="card-description">
             <p><%= plant.name.capitalize %></p>
           </div>
-          <%= link_to "+", plant_path(plant), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+          <div>
+          <%= link_to "Book me", plant_path(plant) %>
+          <i class="fas fa-seedling"></i>
+          </div>
         </div>
       </div>
     <% end %>
