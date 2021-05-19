@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard'
   devise_for :users
 
-  resources :plants, except: [:new] do
-    resources :bookings, only: [ :new, :create ]
+  resources :plants do
+    resources :bookings, only: [ :new, :create]
   end
   resources :bookings, only: [ :edit, :update, :show ]
 end
