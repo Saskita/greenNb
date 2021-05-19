@@ -12,6 +12,11 @@ class PlantsController < ApplicationController
     end
   end
 
+  def new
+    @plant = Plant.new
+    authorize @plant
+  end
+
   def show
     @plant = Plant.find(params[:id])
   end
