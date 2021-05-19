@@ -1,24 +1,42 @@
-<h1>Plants 🌿</h1>
+<h2 class="titre-section text-center">My Plants 🌿</h2>
 <ul>
   <% @plants.each do |plant| %>
     <li>
-    <%= link_to plant.name, plant_path(plant) %>
+    <%= link_to plant.name.capitalize, plant_path(plant) %>
     </li>
   <% end %>
 </ul>
 
+<div class="container display-plants">
+  <div class="row">
+    <% @plants.each do |plant| %>
+      <div class="col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plant.photos[0] %>');">
+          <div class="card-description">
+            <p><%= plant.name.capitalize %></p>
+          </div>
+          <%= link_to "+", plant_path(plant), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <% if @plant.errors.messages%>
-<p> Information Missing, Click Again</p>
+<%# <p> Information Missing, Click Again</p> %>
 <% end %>
 
-
-<a class="btn btn-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1 ">Add a new plant</a>
-      <div class="row">
-        <div class="col">
-          <div class="collapse multi-collapse" id="multiCollapseExample1">
-            <div class="card card-body">
-                <%= render "form", plant: @plant %>
+<div class="btn-centered">
+<div>
+  <a class="btn btn-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1 ">Add a new plant</a>
+        <div class="row">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+              <div class="card card-body">
+                  <%= render "form", plant: @plant %>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
+      </div>
+      </div>
+</div>

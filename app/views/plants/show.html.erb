@@ -1,4 +1,4 @@
-<h2><%= @plant.name %></h2>
+<h2 class="titre-section text-center"><%= @plant.name.capitalize %></h2>
 <p><%= @plant.description %></p>
 <p><%= @plant.price %>€ / jour</p>
 <% @plant.photos.each do |photo| %>
