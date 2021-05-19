@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @plant = Plant.find(params[:id])
+    @plant = Plant.find(params[:plant_id])
     @booking.user = current_user
   end
 
