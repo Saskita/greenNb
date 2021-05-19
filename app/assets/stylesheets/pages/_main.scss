@@ -106,3 +106,22 @@ align-items: center;
   justify-content: center;
   align-items: center;
 }
+
+
+.link-home{
+  text-decoration: none;
+  color: rgb(65, 65, 65);
+  &:hover{
+    text-decoration: none;
+    color: black;
+  }
+
+// ::::::::::: RECHERCHE :::::::::::::::::::::::
+
+.main-container {
+  display: flex;
+}
+
+.display-cards {
+  flex-grow: 1;
+}
