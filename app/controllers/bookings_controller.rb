@@ -13,9 +13,11 @@ class BookingsController < ApplicationController
     @plant = Plant.find(params[:plant_id])
     @booking.plant = @plant
     @booking.user = current_user
+
     if @booking.save
-      redirect_to plant_path(@plant)
+      redirect_to booking_path(@booking)
     else
+      @plant = Plant.find(params[:plant_id])
       render :new
     end
   end
@@ -33,7 +35,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @plant = Plant.find(params[:plant_id])
+    @plant = @booking.plant
     @booking.user = current_user
   end
 
