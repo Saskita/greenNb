@@ -1,4 +1,4 @@
-<h2 class="titre-section text-center">My Plants 🌿</h2>
+<h2 class="titre-section text-center">Choose one of our wonderful plants 🌿</h2>
 <ul>
   <% @plants.each do |plant| %>
     <li>
@@ -7,20 +7,7 @@
   <% end %>
 </ul>
 
-<div class="container display-plants">
-  <div class="row">
-    <% @plants.each do |plant| %>
-      <div class="col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plant.photos[0] %>');">
-          <div class="card-description">
-            <p><%= plant.name.capitalize %></p>
-          </div>
-          <%= link_to "+", plant_path(plant), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render 'cards_grid', plants: @plants %>
 
 <% if @plant.errors.messages%>
 <%# <p> Information Missing, Click Again</p> %>
