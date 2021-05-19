@@ -108,7 +108,7 @@ align-items: center;
 }
 
 
-.link-home{
+.link-home, a {
   text-decoration: none;
   color: rgb(65, 65, 65);
   &:hover{
@@ -121,9 +121,15 @@ align-items: center;
 .main-container {
   padding-top: 0;
   display: flex;
-  border-top: rgb(206, 202, 202) 1.5px solid;
+  border-top: rgb(218, 215, 215) 1.5px solid;
 }
 
 .display-cards {
   flex-grow: 1;
+}
+
+.card{
+ height: 25vh;
+ background-size: cover;
+ background-repeat: no-repeat;
 }
