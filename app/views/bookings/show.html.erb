@@ -1,0 +1,19 @@
+<h2 class="titre-section text-center">Booking</h2>
+<p><%= @plant.name %> has been booked from <%= @booking.start_date %> to <%= @booking.end_date %></p>
+<p>For <%= @booking.set_total_price %>€</p>
+<p>Plant is located at </p>
+<% @plant.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
+<% end %>
+
+<% if @booking.user == current_user %>
+  <%= simple_form_for @booking do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
+    <%= f.submit "Accept" %>
+  <% end %>
+    <%= simple_form_for @booking do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'Declined' } %>
+    <%= f.submit "Decline" %>
+  <% end %>
+<% else %>
+<% end %>
