@@ -1,26 +1,17 @@
-<h2 class="titre-section text-center">My Plants 🌿</h2>
-<ul>
-  <% @plants.each do |plant| %>
-    <li>
-    <%= link_to plant.name.capitalize, plant_path(plant) %>
-    </li>
-  <% end %>
-</ul>
+<h2 class="titre-section text-center">Find the plant of your dream 🌿</h2>
 
-<div class="container display-plants">
-  <div class="row">
-    <% @plants.each do |plant| %>
-      <div class="col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= plant.photos[0] %>');">
-          <div class="card-description">
-            <p><%= plant.name.capitalize %></p>
-          </div>
-          <%= link_to "+", plant_path(plant), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
-        </div>
-      </div>
-    <% end %>
+<div class="main-container">
+  <div class="display-cards">
+    <%= render "cards_grid", plants: @plants %>
+  </div>
+
+  <div id="map"
+    style="width: 40%; height: 100vh;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
 
 <% if @plant.errors.messages%>
 <%# <p> Information Missing, Click Again</p> %>

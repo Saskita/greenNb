@@ -106,3 +106,14 @@ align-items: center;
   justify-content: center;
   align-items: center;
 }
+
+
+// ::::::::::: RECHERCHE :::::::::::::::::::::::
+
+.main-container {
+  display: flex;
+}
+
+.display-cards {
+  flex-grow: 1;
+}

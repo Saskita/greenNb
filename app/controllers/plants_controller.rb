@@ -4,6 +4,12 @@ class PlantsController < ApplicationController
   def index
     @plants = policy_scope(Plant)
     @plant = Plant.new
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude
+      }
+    end
   end
 
   def show
