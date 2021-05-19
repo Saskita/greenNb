@@ -4,6 +4,12 @@ class PlantsController < ApplicationController
   def index
     @plants = policy_scope(Plant)
     @plant = Plant.new
+    @markers = @plants.geocoded.map do |plant|
+      {
+        lat: plant.latitude,
+        lng: plant.longitude
+      }
+    end
   end
 
   def show
@@ -47,7 +53,7 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :description, :availability, :price,  photos: [])
+    params.require(:plant).permit(:name, :address, :description, :availability, :price,  photos: [])
   end
 end
 

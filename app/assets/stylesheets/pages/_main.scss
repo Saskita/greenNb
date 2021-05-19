@@ -107,6 +107,7 @@ align-items: center;
   align-items: center;
 }
 
+
 .link-home{
   text-decoration: none;
   color: rgb(65, 65, 65);
@@ -114,4 +115,13 @@ align-items: center;
     text-decoration: none;
     color: black;
   }
+
+// ::::::::::: RECHERCHE :::::::::::::::::::::::
+
+.main-container {
+  display: flex;
+}
+
+.display-cards {
+  flex-grow: 1;
 }
