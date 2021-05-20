@@ -2,48 +2,41 @@
 <div class="form-container">
   <h2 class="titre-section text-center mb-4 pt-4">Dashboard</h2>
   <div class="dashboard-boxes">
-    <div class="dash-profil-plant-box">
+
+    <div class="dash-profil-plant-box" style="width: 100%">
       <div class="dash-box profil">
         <div class="photo-profil">
           <h3 class="titre-section mt-4">My Profil</h3>
           <img class="avatar mt-3" src="https://avatars.githubusercontent.com/u/79912363?v=4">
         </div>
         <a class="btn btn-success mb-2" href="">Edit profil <i class="fas fa-pen ml-2"></i></a>
-       </div>
-  
-
-       <div class="dash-box plants">
-        <h3 class="titre-section mt-4">My Plants</h3>
-
-          <% @plants.each do |plant| %>
-          <%# <div class="grp-plant"> %>
-            <%= cl_image_tag plant.photos.first.key, height: 40, width: 40, crop: :fill, class: "avatar" %>
-
-            <i class="fas fa-seedling"></i>
-            <%= link_to "#{plant.name.split.map(&:capitalize).join(' ')}", plant_path(plant) %>
-          <%# </div> %>
-          <% end %>
-
-        </div>
       </div>
+
+
+      <div class="dash-box plants">
+        <h3 class="titre-section mt-4">My Plants</h3>
+        <% @plants.each do |plant| %>
+          <%= cl_image_tag plant.photos.first.key, height: 40, width: 40, crop: :fill, class: "avatar" %>
+
+          <i class="fas fa-seedling"></i>
+          <%= link_to "#{plant.name.split.map(&:capitalize).join(' ')}", plant_path(plant) %>
+        <% end %>
+      </div>
+    </div>
 
 
     <div class="dash-box manage">
       <h3 class="titre-section mt-4">Manage my bookings</h3>
-      
-      
       <h3>sas My plants booked</h3>
       <% @my_plant_bookings.each do |booking| %>
         <%= link_to booking.plant.name, booking_path(booking) %>
       <% end %>
 
-      
       <h3>jean My bookings</h3>
       <% @my_bookings.each do |booking| %>
         <%= link_to booking.plant.name, booking_path(booking) %>
       <% end %>
     </div>
-
   </div>
 </div>
 
