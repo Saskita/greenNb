@@ -43,6 +43,23 @@ h4{
 
 /////// CONTAINER /////////
 
+
+.bg-white {
+  background-color: blanchedalmond;
+  padding: 10%;
+  border-radius: 1%;
+  box-shadow: 1px 1px 12px #555;
+  // opacity: 0.95;
+}
+
+
+.form-container{
+
+  background-image: url(leaf-pattern-large.jpeg);
+  opacity: 0.8;
+
+}
+
 .small-container{
   height: 30vh;
   display: flex;
@@ -172,3 +189,4 @@ align-items: center;
 .search-duo{
   display: flex;
 }
+
