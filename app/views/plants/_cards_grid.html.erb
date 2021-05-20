@@ -7,7 +7,7 @@
             <p><strong><%= plant.name.capitalize %></strong></p>
           </div>
           <div>
-          <%= link_to "Book me", plant_path(plant) %>
+            <%= link_to "See this Plant", plant_path(plant) %>
           <i class="fas fa-seedling"></i>
           </div>
         </div>
@@ -15,3 +15,8 @@
     <% end %>
   </div>
 </div>
+
+
+      <%# <% if @plant.user != current_user %>
+        <%# <p><%= link_to "Book this plant", new_plant_booking_path(@plant)%></p>
+      <%# <% end %>
