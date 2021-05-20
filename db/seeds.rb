@@ -29,7 +29,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502293/L
 plant.photos.attach(io: file, filename: 'Lierre 3.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Palm tree", description: "One meter high with beautiful green leaves", address: "12 Avenue Marceau, 92400 Courbevoie", price: 3 )
+plant = Plant.new(name: "Palm tree", description: "One meter high with beautiful green leaves", address: "12 Avenue Marceau, 92400 Courbevoie", price: 3 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502294/palmier_3_litbmc.jpg')
 plant.photos.attach(io: file, filename: 'palmier.jpg', content_type: 'image/jpg')
@@ -39,7 +39,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502293/p
 plant.photos.attach(io: file, filename: 'palmier 1.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Piléa", description: "Like a potted water lily, so cute. Needs sun to grow.", address: "30 Rue Thomas Edison, 94000 Créteil", price: 1 )
+plant = Plant.new(name: "Piléa", description: "Like a potted water lily, so cute. Needs sun to grow.", address: "30 Rue Thomas Edison, 94000 Créteil", price: 1 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502294/pilea_1_zxekk6.jpg')
 plant.photos.attach(io: file, filename: 'pilea 1.jpg', content_type: 'image/jpg')
@@ -47,7 +47,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502291/p
 plant.photos.attach(io: file, filename: 'pilea 2.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Monstera Deliciosa", description: "Needs a lot of light but especially without direct sunlight. You will love its leaves with holes", address: "34 Rue de Rivoli, 75004 Paris", price: 4 )
+plant = Plant.new(name: "Monstera Deliciosa", description: "Needs a lot of light but especially without direct sunlight. You will love its leaves with holes", address: "34 Rue de Rivoli, 75004 Paris", price: 4 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502295/Monstera_1_ydp0hx.jpg')
 plant.photos.attach(io: file, filename: 'monstera 1.jpg', content_type: 'image/jpg')
@@ -57,7 +57,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502294/M
 plant.photos.attach(io: file, filename: 'monstera 3.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Aloe Vera", description: "Que vera, vera. Whatever will be, will be the future's not ours to see.", address: "5 rue des Martyrs, 75009 Paris", price: 2 )
+plant = Plant.new(name: "Aloe Vera", description: "Que vera, vera. Whatever will be, will be the future's not ours to see.", address: "5 rue des Martyrs, 75009 Paris", price: 2 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502290/aloe_vera_1_ojyhul.jpg')
 plant.photos.attach(io: file, filename: 'aloe vera 1.jpg', content_type: 'image/jpg')
@@ -65,7 +65,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502291/a
 plant.photos.attach(io: file, filename: 'aloe vera 2.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Azalea", description: "Place azalea in the kitchen or bathroom for its ability to absorb ammonia. The azalea tolerates smoky places well.", address: "14 Rue de la Paix, 75002 Paris", price: 5 )
+plant = Plant.new(name: "Azalea", description: "Place azalea in the kitchen or bathroom for its ability to absorb ammonia. The azalea tolerates smoky places well.", address: "14 Rue de la Paix, 75002 Paris", price: 5 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502293/azalee_2_fz7zyc.jpg')
 plant.photos.attach(io: file, filename: 'azalea 1.jpg', content_type: 'image/jpg')
@@ -75,7 +75,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502291/a
 plant.photos.attach(io: file, filename: 'azalea 3.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Chlorophytum comosum", description: "Aerial part, root and tuber… the whole plant is depolluting. And what efficiency!", address: "40 Rue Cassette, 75006 Paris", price: 2 )
+plant = Plant.new(name: "Chlorophytum comosum", description: "Aerial part, root and tuber… the whole plant is depolluting. And what efficiency!", address: "40 Rue Cassette, 75006 Paris", price: 2 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502291/Chlorophytum_3_zwncvb.jpg')
 plant.photos.attach(io: file, filename: 'Chlorophytum 1.jpg', content_type: 'image/jpg')
@@ -85,7 +85,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502291/C
 plant.photos.attach(io: file, filename: 'Chlorophytum 3.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Ficus benjamina", description: "The plant fits into any bright room.", address: "15 rue amélie, 75007 Paris", price: 4 )
+plant = Plant.new(name: "Ficus benjamina", description: "The plant fits into any bright room.", address: "15 rue amélie, 75007 Paris", price: 4 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502292/Ficus_benjamina_2_swnwgt.jpg')
 plant.photos.attach(io: file, filename: 'Ficus 1.jpg', content_type: 'image/jpg')
@@ -93,7 +93,7 @@ file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502292/F
 plant.photos.attach(io: file, filename: 'Ficus 2.jpg', content_type: 'image/jpg')
 plant.save!
 
-Plant.create!(name: "Boston fern", description: "Sprayed regularly, it helps to significantly increase the humidity in overheated rooms", address: "7 Rue Ferdinand Dugué, 28000 Chartres", price: 5 )
+plant = Plant.new(name: "Boston fern", description: "Sprayed regularly, it helps to significantly increase the humidity in overheated rooms", address: "7 Rue Ferdinand Dugué, 28000 Chartres", price: 5 )
 plant.user = saskia
 file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621502291/Boston_fern_1_lfh3sj.jpg')
 plant.photos.attach(io: file, filename: 'Boston fern 1.jpg', content_type: 'image/jpg')
