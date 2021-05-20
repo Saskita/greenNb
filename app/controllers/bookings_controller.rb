@@ -27,10 +27,9 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(params[:id])
     @plant = @booking.plant
     @booking.update(booking_params)
-    redirect_to plant_path(@plant)
+    redirect_to booking_path(@booking)
   end
 
   def show

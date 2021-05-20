@@ -9,5 +9,7 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @plants = Plant.where(user: @user)
+    @my_plant_bookings = Booking.joins(:plant).where(plant: {user: @user})
+    @my_bookings = Booking.where(user: @user)
   end
 end

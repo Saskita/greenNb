@@ -1,3 +1,4 @@
+
 <div class="form-container">
   <h2 class="titre-section text-center mb-4 pt-4">Dashboard</h2>
   <div class="dashboard-boxes">
@@ -8,9 +9,10 @@
           <img class="avatar mt-3" src="https://avatars.githubusercontent.com/u/79912363?v=4">
         </div>
         <a class="btn btn-success mb-2" href="">Edit profil <i class="fas fa-pen ml-2"></i></a>
-      </div>
+       </div>
+  
 
-      <div class="dash-box plants">
+       <div class="dash-box plants">
         <h3 class="titre-section mt-4">My Plants</h3>
 
           <% @plants.each do |plant| %>
@@ -22,13 +24,24 @@
           <%# </div> %>
           <% end %>
 
+        </div>
       </div>
-    </div>
-
 
 
     <div class="dash-box manage">
       <h3 class="titre-section mt-4">Manage my bookings</h3>
+      
+      
+      <h3>sas My plants booked</h3>
+      <% @my_plant_bookings.each do |booking| %>
+        <%= link_to booking.plant.name, booking_path(booking) %>
+      <% end %>
+
+      
+      <h3>jean My bookings</h3>
+      <% @my_bookings.each do |booking| %>
+        <%= link_to booking.plant.name, booking_path(booking) %>
+      <% end %>
     </div>
 
   </div>
