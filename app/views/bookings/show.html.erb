@@ -1,12 +1,14 @@
-<h2 class="titre-section text-center">Booking</h2>
-<p><%= @plant.name %> has been booked from <%= @booking.start_date %> to <%= @booking.end_date %></p>
-<p>For <%= @booking.set_total_price %>€</p>
-<p>Plant is located at </p>
+<h2 class="titre-section text-center">Pending booking...</h2>
+<p>You have just booked the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
 <% @plant.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
 <% end %>
+<p>Please wait for the owner's confirmation.</p>
+<p><U>Booking details</U>:</p>
+<p>Total price: <%= @booking.set_total_price %>€</p>
+<p>Plant location: <%= @plant.address %> </p>
 
-<% if @booking.user != current_user %>
+<% if @booking.plant.user == current_user %>
   <%= simple_form_for @booking do |f| %>
     <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
     <%= f.submit "Accept" %>
@@ -17,3 +19,6 @@
   <% end %>
 <% else %>
 <% end %>
+
+<%# Afficher le statut du booking et le mettre à jour
+Affichage différent pour le owner %>

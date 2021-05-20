@@ -1,6 +1,11 @@
 <div class="dash-container mt-4">
 <h2 class="titre-section">Dashboard</h2>
 
+<% @my_plant_bookings.each do |booking| %>
+  <%= booking.plant.name %>
+  <%= link_to booking.plant.name, booking_path(booking) %>
+<% end %>
+
 <div class="card py-5 col-4 mt-4">
   <div id="accordion" class="myaccordion">
     <div class="card">
@@ -26,7 +31,7 @@
         <h5 class="mb-0">
           <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <p><i class="fas fa-seedling"></i> Manage my bookings</p>
-          </button>
+      bo    </button>
         </h5>
       </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
