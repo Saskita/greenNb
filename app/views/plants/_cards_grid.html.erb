@@ -1,8 +1,8 @@
 <div class="display-plants mt-2">
   <div class="row">
     <% plants.each do |plant| %>
-      <div class="col-sm-4">
-        <div class="card">
+      <div class="col-sm-4" >
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= "https://res.cloudinary.com/db0v28ezw/image/upload/v1621437963/#{plant.photos.first.key}.jpg" %>');">
           <div class="card-description">
             <p><strong><%= plant.name.capitalize %></strong></p>
           </div>
