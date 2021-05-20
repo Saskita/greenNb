@@ -1,8 +1,13 @@
 <div class="dash-container mt-4">
 <h2 class="titre-section">Dashboard</h2>
 
+<h3>My plants booked</h3>
 <% @my_plant_bookings.each do |booking| %>
-  <%= booking.plant.name %>
+  <%= link_to booking.plant.name, booking_path(booking) %>
+<% end %>
+
+<h3>My bookings</h3>
+<% @my_bookings.each do |booking| %>
   <%= link_to booking.plant.name, booking_path(booking) %>
 <% end %>
 

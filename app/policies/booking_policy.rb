@@ -18,7 +18,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record.plant.user == user
   end
 
   def update?
