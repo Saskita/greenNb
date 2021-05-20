@@ -6,7 +6,7 @@
   <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
 <% end %>
 
-<% if @booking.user == current_user %>
+<% if @booking.user != current_user %>
   <%= simple_form_for @booking do |f| %>
     <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
     <%= f.submit "Accept" %>
