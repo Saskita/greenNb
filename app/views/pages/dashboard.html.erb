@@ -1,68 +1,51 @@
-<div class="dash-container mt-4">
-<h2 class="titre-section">Dashboard</h2>
 
-<h3>My plants booked</h3>
-<% @my_plant_bookings.each do |booking| %>
-  <%= link_to booking.plant.name, booking_path(booking) %>
-<% end %>
-
-<h3>My bookings</h3>
-<% @my_bookings.each do |booking| %>
-  <%= link_to booking.plant.name, booking_path(booking) %>
-<% end %>
-
-<div class="card py-5 col-4 mt-4">
-  <div id="accordion" class="myaccordion">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            <p><i class="fas fa-seedling"></i> My Plants</p>
-          </button>
-        </h5>
-      </div>
-      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-
-        <div class="card-body">
-          <div>
-              <p><i>List</i></p>
-          </div>
+<div class="form-container">
+  <h2 class="titre-section text-center mb-4 pt-4">Dashboard</h2>
+  <div class="dashboard-boxes">
+    <div class="dash-profil-plant-box">
+      <div class="dash-box profil">
+        <div class="photo-profil">
+          <h3 class="titre-section mt-4">My Profil</h3>
+          <img class="avatar mt-3" src="https://avatars.githubusercontent.com/u/79912363?v=4">
         </div>
+        <a class="btn btn-success mb-2" href="">Edit profil <i class="fas fa-pen ml-2"></i></a>
+       </div>
+  
+
+       <div class="dash-box plants">
+        <h3 class="titre-section mt-4">My Plants</h3>
+
+          <% @plants.each do |plant| %>
+          <%# <div class="grp-plant"> %>
+            <%= cl_image_tag plant.photos.first.key, height: 40, width: 40, crop: :fill, class: "avatar" %>
+
+            <i class="fas fa-seedling"></i>
+            <%= link_to "#{plant.name.split.map(&:capitalize).join(' ')}", plant_path(plant) %>
+          <%# </div> %>
+          <% end %>
 
         </div>
       </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <p><i class="fas fa-seedling"></i> Manage my bookings</p>
-      bo    </button>
-        </h5>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <div>
-                <p>My bookings on hold</p>
-              <p>My validated bookings</p>
-              <p>My past bookings</p>
-          </div>
-        </div>
-      </div>
+
+
+    <div class="dash-box manage">
+      <h3 class="titre-section mt-4">Manage my bookings</h3>
+      
+      
+      <h3>sas My plants booked</h3>
+      <% @my_plant_bookings.each do |booking| %>
+        <%= link_to booking.plant.name, booking_path(booking) %>
+      <% end %>
+
+      
+      <h3>jean My bookings</h3>
+      <% @my_bookings.each do |booking| %>
+        <%= link_to booking.plant.name, booking_path(booking) %>
+      <% end %>
     </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <p><i class="fas fa-seedling"></i><a href="_form"> Add a plant</p>
-          </button>
-        </h5>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          <div class="caroussel-card">
 
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+</div>
+
+
+

@@ -6,7 +6,9 @@ body{
   font-family: 'Barlow';
 }
 
+
 // ::::: TITLES //////
+
 h1 {
   padding-top: 0;
   font-family: 'Pattaya', cursive;
@@ -39,9 +41,20 @@ h4{
 }
 
 //::::::: CONTAINERS ///////////
+.search {
+  display: flex;
+  justify-content: center;
+}
 
 .global-container {
   padding-top: 70px;
+}
+
+
+.main-container {
+  padding-top: 0;
+  display: flex;
+  border-top: rgb(218, 215, 215) 1.5px solid;
 }
 
 .small-container{
@@ -57,67 +70,70 @@ h4{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
 }
 
 
-.dash-container{
-display: flex;
-flex-direction: column;
-align-items: center;
+.display-cards {
+  flex-grow: 1;
 }
 
-
-.img-accueil{
+.dash-profil-plant-box{
   display: flex;
   flex-direction: column;
-  padding-top: 10%;
+}
+
+.photo-profil{
+  display: flex;
   align-items: center;
-  gap: 6%;
-  background: image-url('plant2.jpeg') no-repeat center / cover;
-  // filter: contrast(.8);
-  width: 100%;
-  height: 90vh;
-
+  gap: 5%;
+  // justify-content: center;
 }
 
-.ligne{
-  color: black;
-  width: 30%;
-  background: rgb(245, 243, 243);
-  height: 1.8px;
+.dashboard-boxes{
+  display: flex;
+  flex-direction: row;
 }
 
-.btn-rent{
-  width: 20%;
-  height: 10%;
-  padding-top: 0.5%;
-  font-weight: bold;
-  box-shadow: 1px 1px 1px 1px rgba(3, 3, 6, 0.2);
+.dash-box{
+  background-color: rgb(255, 253, 249);
+  padding: 4%;
+  margin: 0 5% 5% 5% ;
+  border-radius: 1%;
+  box-shadow: 1px 1px 12px #555;
+  width: 35%;
 }
 
-.barre-recherche{
-  width: 190px;
-  height: 38px;
-  border: 1px solid #ced4da;
-  font-family: 'Barlow';
-  padding-left: 3%;
+.dash-box > .manage{
+  width: 65%;
 }
-.search-duo{
+
+.grp-plant{
   display: flex;
 }
+
+.bg-white {
+  padding: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 1%;
+  box-shadow: 1px 1px 12px #555;
+  // opacity: 0.95;
+}
+
+
+.form-container{
+  background-image: url(leaf-pattern-large.jpeg);
+}
+
 
 .display-plants{
   padding: 5%;
 }
 
-
-.btn-centered{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
+// ////////////// FONT ///////////////
 .link-home, a {
   text-decoration: none;
   color: rgb(37, 37, 37);
@@ -125,24 +141,6 @@ align-items: center;
     text-decoration: none;
     color: black;
   }
-}
-// ::::::::::: RECHERCHE :::::::::::::::::::::::
-
-.main-container {
-  padding-top: 0;
-  display: flex;
-  border-top: rgb(218, 215, 215) 1.5px solid;
-}
-
-.display-cards {
-  flex-grow: 1;
-}
-
-.card{
- height: 25vh;
- background-size: cover;
- background-repeat: no-repeat;
- margin-bottom: 30px;
 }
 
 // FOOTER////////////////
@@ -173,4 +171,53 @@ align-items: center;
 }
 .footer .fa-heart {
   color: #007149;
+}
+
+
+/////////////////////
+
+
+.ligne{
+  color: black;
+  width: 30%;
+  background: rgb(245, 243, 243);
+  height: 1.8px;
+}
+
+.btn-centered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-rent{
+  width: 20%;
+  height: 10%;
+  padding-top: 0.5%;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px 1px rgba(3, 3, 6, 0.2);
+}
+
+.barre-recherche{
+  width: 190px;
+  height: 38px;
+  border: 1px solid #ced4da;
+  font-family: 'Barlow';
+  padding-left: 3%;
+}
+.search-duo{
+  display: flex;
+}
+
+
+.img-accueil{
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  gap: 6%;
+  background: image-url('plant2.jpeg') no-repeat center / cover;
+  // filter: contrast(.8);
+  width: 100%;
+  height: 90vh;
 }
