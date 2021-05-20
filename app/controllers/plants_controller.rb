@@ -3,7 +3,18 @@ class PlantsController < ApplicationController
 
   def index
     @plants = policy_scope(Plant)
+
     @plant = Plant.new
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
+      @plants = @plants.where(sql_query, query: "%#{params[:query]}%")
+    end
+
+    if params[:address].present?
+      @plants = @plants.near(params[:address], params[:km].present? ? params[:km] : 10)
+    end
+
     @markers = @plants.geocoded.map do |plant|
       {
         lat: plant.latitude,
@@ -58,7 +69,7 @@ class PlantsController < ApplicationController
   end
 
   def plant_params
-    params.require(:plant).permit(:name, :address, :description, :availability, :price,  photos: [])
+    params.require(:plant).permit(:name, :address, :description, :availability, :price, photos: [])
   end
 end
 

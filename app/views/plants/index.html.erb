@@ -1,6 +1,31 @@
 
 <h2 class="titre-section text-center mt-4 mb-5">Find the plant of your dream 🌿</h2>
 
+<div class="container search">
+  <div class="search-duo">
+  <%= form_tag plants_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "barre-recherche",
+      placeholder: "Find your best plant"
+    %>
+
+    <%= text_field_tag :address,
+      params[:address],
+      class: "barre-recherche",
+      placeholder: "Enter an address"
+    %>
+
+    <%= text_field_tag :km,
+      params[:km],
+      class: "barre-recherche",
+      placeholder: "How many km around ?"
+    %>
+    <%= submit_tag "Search", class: "btn btn-success" %>
+  <% end %>
+  </div>
+</div>
+
 <div class="main-container">
   <div class="display-cards">
     <%= render "cards_grid", plants: @plants %>
@@ -12,6 +37,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
 
 
 
