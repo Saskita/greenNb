@@ -7,8 +7,7 @@ body{
 }
 
 
-// ////// TITRES ////////
-
+// ::::: TITLES //////
 
 h1 {
   padding-top: 0;
@@ -41,7 +40,34 @@ h4{
   text-shadow: 1px 1px 1px rgb(252, 252, 252);
 }
 
-/////// CONTAINER /////////
+//::::::: CONTAINERS ///////////
+
+.global-container {
+  padding-top: 70px;
+}
+
+.small-container{
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5% 0 5%;
+}
+
+.card{
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.dash-container{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 
 
 .bg-white {
@@ -78,6 +104,7 @@ h4{
   flex-grow: 1;
 }
 
+
 .card{
   height: 30vh;
   background-size: cover;
@@ -108,6 +135,24 @@ align-items: center;
     text-decoration: none;
     color: black;
   }
+}
+// :::::::::::::::::::::::::
+
+.main-container {
+  padding-top: 0;
+  display: flex;
+  border-top: rgb(218, 215, 215) 1.5px solid;
+}
+
+.display-cards {
+  flex-grow: 1;
+}
+
+.card{
+  height: 25vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
 }
 
 // FOOTER////////////////
@@ -143,20 +188,6 @@ align-items: center;
 
 /////////////////////
 
-.img-accueil{
-  display: flex;
-  flex-direction: column;
-  padding-top: 10%;
-  align-items: center;
-  gap: 6%;
-  background: url(plant2.jpeg) no-repeat center / cover;
-  // filter: contrast(.8);
-  width: 100%;
-  height: 90vh;
-
-}
-
-
 
 .ligne{
   color: black;
@@ -190,3 +221,15 @@ align-items: center;
   display: flex;
 }
 
+
+.img-accueil{
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  align-items: center;
+  gap: 6%;
+  background: image-url('plant2.jpeg') no-repeat center / cover;
+  // filter: contrast(.8);
+  width: 100%;
+  height: 90vh;
+}
