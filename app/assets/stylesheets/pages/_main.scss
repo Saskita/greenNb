@@ -41,58 +41,15 @@ h4{
 }
 
 //::::::: CONTAINERS ///////////
+.search {
+  display: flex;
+  justify-content: center;
+}
 
 .global-container {
   padding-top: 70px;
 }
 
-.small-container{
-  height: 30vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 5% 0 5%;
-}
-
-.card{
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-
-.dash-container{
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-
-
-.bg-white {
-  background-color: blanchedalmond;
-  padding: 10%;
-  border-radius: 1%;
-  box-shadow: 1px 1px 12px #555;
-  // opacity: 0.95;
-}
-
-
-.form-container{
-
-  background-image: url(leaf-pattern-large.jpeg);
-  opacity: 0.8;
-
-}
-
-.small-container{
-  height: 30vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 5% 0 5%;
-}
 
 .main-container {
   padding-top: 0;
@@ -100,32 +57,81 @@ align-items: center;
   border-top: rgb(218, 215, 215) 1.5px solid;
 }
 
+.small-container{
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5% 0 5%;
+}
+
+.card{
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
+}
+
+
 .display-cards {
   flex-grow: 1;
 }
 
-
-.card{
-  height: 30vh;
-  background-size: cover;
-  background-repeat: no-repeat;
+.dash-profil-plant-box{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+.photo-profil{
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  // justify-content: center;
+}
+
+.dashboard-boxes{
+  display: flex;
+  flex-direction: row;
+}
+
+.dash-box{
+  background-color: rgb(255, 253, 249);
+  padding: 4%;
+  margin: 0 5% 5% 5% ;
+  border-radius: 1%;
+  box-shadow: 1px 1px 12px #555;
+  width: 35%;
+}
+
+.dash-box > .manage{
+  width: 65%;
+}
+
+.grp-plant{
+  display: flex;
+}
+
+.bg-white {
+  padding: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 1%;
+  box-shadow: 1px 1px 12px #555;
+  // opacity: 0.95;
+}
+
+
+.form-container{
+  background-image: url(leaf-pattern-large.jpeg);
 }
 
 
 .display-plants{
   padding: 5%;
 }
-
-
-.dash-container{
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
 
 // ////////////// FONT ///////////////
 .link-home, a {
@@ -135,24 +141,6 @@ align-items: center;
     text-decoration: none;
     color: black;
   }
-}
-// :::::::::::::::::::::::::
-
-.main-container {
-  padding-top: 0;
-  display: flex;
-  border-top: rgb(218, 215, 215) 1.5px solid;
-}
-
-.display-cards {
-  flex-grow: 1;
-}
-
-.card{
-  height: 25vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-bottom: 30px;
 }
 
 // FOOTER////////////////
