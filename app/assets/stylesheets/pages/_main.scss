@@ -81,6 +81,36 @@ h4{
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
+}
+
+.card-description{
+  font-size: 18px;
+  margin-top: 5px ;
+  margin-left: 10px ;
+  color : white;
+  font-family: 'Quicksand';
+}
+
+.fa-index{
+  color : white;
+  margin: 3px 3px 0 3px;
+}
+
+.see-this-plant {
+  display: flex;
+  font-size: 14px;
+  justify-content: flex-end;
+  align-items: end;
+  a {
+    color: white !important;
+    font-family: 'Quicksand';
+    font-weight: bold;
+      &:hover{
+        cursor: pointer;
+    }
+  }
 }
 
 
