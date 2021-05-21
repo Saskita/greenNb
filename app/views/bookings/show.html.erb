@@ -35,7 +35,7 @@
 
   <% else %>
     <h2 class="titre-section text-center mb-4">Manage booking</h2>
-    <div class="cont-plant">
+    <div class="cont-plant bg-white m-5">
       <article class="article-plant mt-2" style="width">
         <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d/%m/%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d/%m/%Y') %></strong>.</p>
 
@@ -65,7 +65,7 @@
 
 
       </article>
-      <%= cl_image_tag @plant.photos.first.key, class:"image-plant", height: 200, width: 300, crop: :fill %>
+      <%= cl_image_tag @plant.photos.first.key, class:"image-plant mt-5", height: 200, width: 300, crop: :fill %>
     </div>
   <% end %>
 </div>
