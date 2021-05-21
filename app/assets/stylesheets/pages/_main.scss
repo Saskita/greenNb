@@ -33,11 +33,19 @@ h4{
   font-size: 20px;
 }
 
+.small-title{
+  font-size: 35px;
+  text-align: center;
+}
 
 .titre-section{
   color:rgb(1, 57, 40);
   font-family: 'Pattaya', cursive;
   text-shadow: 1px 1px 1px rgb(252, 252, 252);
+}
+
+.foot{
+  color: #007149;
 }
 
 //::::::: CONTAINERS ///////////
@@ -58,7 +66,7 @@ h4{
 }
 
 .small-container{
-  height: 30vh;
+  height: 20vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,6 +91,7 @@ h4{
 .dash-profil-plant-box{
   display: flex;
   flex-direction: column;
+
 }
 
 .photo-profil{
@@ -103,11 +112,11 @@ h4{
   margin: 0 5% 5% 5% ;
   border-radius: 1%;
   box-shadow: 1px 1px 12px #555;
-  width: 35%;
 }
 
-.dash-box > .manage{
-  width: 65%;
+.manage{
+  width: 40%;
+  height: 50%;
 }
 
 .grp-plant{
@@ -125,12 +134,20 @@ h4{
 
 
 .form-container{
-  background-image: url(leaf-pattern-large.jpeg);
+  background-image: image-url("leaf-pattern-large.jpeg");
 }
 
+.show-plant{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 2%;
+}
 
-.display-plants{
-  padding: 5%;
+.article-plant{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 // ////////////// FONT ///////////////
