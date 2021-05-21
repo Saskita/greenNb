@@ -44,8 +44,13 @@ h4{
   text-shadow: 1px 1px 1px rgb(252, 252, 252);
 }
 
-.foot{
+.foot, .fa-check{
   color: #007149;
+}
+
+.red{
+  color: rgb(204, 2, 2);
+  font-weight: 700;
 }
 
 //::::::: CONTAINERS ///////////
@@ -139,9 +144,8 @@ h4{
 
 .show-plant{
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: center;
-  gap: 2%;
 }
 
 .article-plant{
@@ -150,6 +154,14 @@ h4{
   justify-content: space-between;
 }
 
+.carrousel{ width: 400px;}
+
+.cont-plant{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 8%;
+}
 // ////////////// FONT ///////////////
 .link-home, a {
   text-decoration: none;
