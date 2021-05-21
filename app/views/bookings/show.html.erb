@@ -1,61 +1,73 @@
-<% if @booking.plant.user != current_user %>
-  <h2 class="titre-section text-center">Your Booking</h2>
-  <%= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
-  <article class="article-plant">
-  <p>You have just booked Saskia's <strong><%= @plant.name %></strong>, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
+<div class="show-plant min-h-container">
+  <% if @booking.plant.user != current_user %>
+    <h2 class="titre-section text-center mb-4">Your Booking</h2>
 
-  <% if @booking.status == "Waiting" %>
-    <p>Please wait for the owner's confirmation.</p>
+    <div class="cont-plant">
+      <article class="article-plant mt-5">
+        <p>You have just booked Saskia's <strong><%= @plant.name %></strong>, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
+
+        <% if @booking.status == "Waiting" %>
+          <p>Please wait for the owner's confirmation.</p>
+        <% else %>
+          <p>The booking status is: <%= @booking.status %></p>
+        <% end %>
+
+        <p><U>Booking details</U>:</p>
+        <p>Total price: <%= @booking.set_total_price %>€</p>
+        <p>Plant location: <%= @plant.address %> </p>
+        <p><i class="fas fa-seedling mr-2"></i> <%= link_to " Back to plants", plants_path %></p>
+
+        <% if @booking.plant.user == current_user %>
+          <%= simple_form_for @booking do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
+            <%= f.submit "Accept" %>
+          <% end %>
+          <%= simple_form_for @booking do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'Declined' } %>
+            <%= f.submit "Decline" %>
+          <% end %>
+        <% else %>
+        <% end %>
+      </article>
+      <%= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
+    </div>
+
+
   <% else %>
-    <p>The booking status is: <%= @booking.status %></p>
-  <% end %>
-
-  <p><U>Booking details</U>:</p>
-  <p>Total price: <%= @booking.set_total_price %>€</p>
-  <p>Plant location: <%= @plant.address %> </p>
-
-  <% if @booking.plant.user == current_user %>
-    <%= simple_form_for @booking do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
-      <%= f.submit "Accept" %>
-    <% end %>
-      <%= simple_form_for @booking do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'Declined' } %>
-      <%= f.submit "Decline" %>
-    <% end %>
-  <% else %>
-  <% end %>
-  </article>
-
-<% else %>
-  <h2 class="titre-section text-center">Pending booking...</h2>
-  <%= cl_image_tag @plant.photos.first.key, height: 200, width: 300, crop: :fill %>
-  <article class="article-plant">
-  <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
+    <h2 class="titre-section text-center mb-4">Manage booking</h2>
+    <div class="cont-plant">
+      <article class="article-plant mt-2">
+        <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
 
 
-  <% if @booking.status == "Waiting" %>
-    <p>Waiting for your confirmation, please accept or decline the booking.</p>
-    <% if @booking.plant.user == current_user %>
-      <%= simple_form_for @booking do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
-        <%= f.submit "Accept" %>
+        <% if @booking.status == "Waiting" %>
+          <p>Waiting for your confirmation, please accept or decline the booking.</p>
+          <% if @booking.plant.user == current_user %>
+            <div class='d-flex'>
+              <%= simple_form_for @booking do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
+                <%= f.submit "Accept", class:"mr-2 btn-success" %>
+              <% end %>
+                <%= simple_form_for @booking do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'Declined' } %>
+                <%= f.submit "Decline", class:"btn-warning" %>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <p>The booking status is: <%= @booking.status %></p>
+        <% end %>
+
+        <p class="mt-4"><U>Booking details</U>:</p>
+        <p>Total price: <%= @booking.set_total_price %>€</p>
+        <p>Plant location: <%= @plant.address %> </p>
+        <p><i class="fas fa-seedling mr-2"></i> <%= link_to " Back to dashboard", dashboard_path %></p>
+
       <% end %>
-        <%= simple_form_for @booking do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'Declined' } %>
-        <%= f.submit "Decline" %>
-      <% end %>
-    <% end %>
-  <% else %>
-    <p>The booking status is: <%= @booking.status %></p>
-  <% end %>
-
-  <p><U>Booking details</U>:</p>
-  <p>Total price: <%= @booking.set_total_price %>€</p>
-  <p>Plant location: <%= @plant.address %> </p>
-
-<% end %>
- </article>
+      </article>
+      <%#= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
+    </div>
+</div>
 
 <%# Afficher le statut du booking et le mettre à jour
 Affichage différent pour le owner %>
