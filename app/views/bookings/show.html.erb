@@ -1,9 +1,8 @@
 <% if @booking.plant.user != current_user %>
-  <h2 class="titre-section text-center">Pending booking...</h2>
-  <p>You have just booked the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
-  <% @plant.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
-  <% end %>
+  <h2 class="titre-section text-center">Your Booking</h2>
+  <%= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
+  <article class="article-plant">
+  <p>You have just booked Saskia's <strong><%= @plant.name %></strong>, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
 
   <% if @booking.status == "Waiting" %>
     <p>Please wait for the owner's confirmation.</p>
@@ -26,13 +25,14 @@
     <% end %>
   <% else %>
   <% end %>
+  </article>
 
 <% else %>
   <h2 class="titre-section text-center">Pending booking...</h2>
+  <%= cl_image_tag @plant.photos.first.key, height: 200, width: 300, crop: :fill %>
+  <article class="article-plant">
   <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
-  <% @plant.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %>
-  <% end %>
+
 
   <% if @booking.status == "Waiting" %>
     <p>Waiting for your confirmation, please accept or decline the booking.</p>
@@ -55,6 +55,7 @@
   <p>Plant location: <%= @plant.address %> </p>
 
 <% end %>
+ </article>
 
 <%# Afficher le statut du booking et le mettre à jour
 Affichage différent pour le owner %>

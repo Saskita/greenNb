@@ -2,7 +2,7 @@
 <h2 class="titre-section text-center mt-4 mb-5">Find the plant of your dream 🌿</h2>
 
 <div class="container search">
-  <div class="search-duo">
+  <div class="search-duo mb-4">
   <%= form_tag plants_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -27,11 +27,11 @@
 </div>
 
 <div class="main-container">
-  <div class="display-cards">
+  <div class="display-cards m-4">
     <%= render "cards_grid", plants: @plants %>
   </div>
 
-  <div id="map" class="mt-5"
+  <div id="map" class="mt-4 mr-4"
     style="width: 40%; height: 100vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
