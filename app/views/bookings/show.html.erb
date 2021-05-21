@@ -1,15 +1,15 @@
-<div class="show-plant min-h-container">
+<div class="show-plant min-h-container form-container">
   <% if @booking.plant.user != current_user %>
-    <h2 class="titre-section text-center mb-4">Your Booking</h2>
+    <h2 class="titre-section text-center mb-1 mt-2">Your Booking</h2>
 
-    <div class="cont-plant">
-      <article class="article-plant mt-5">
-        <p>You have just booked Saskia's <strong><%= @plant.name %></strong>, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
+    <div class="cont-plant bg-white m-5">
+      <article class="article-plant mt-5" style="width: 50%">
+        <p>Dear Jean, you have just booked Saskia's <strong><%= @plant.name %></strong>, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
 
         <% if @booking.status == "Waiting" %>
           <p>Please wait for the owner's confirmation.</p>
         <% else %>
-          <p>The booking status is: <%= @booking.status %></p>
+          <p>The booking status is: <span class="foot"><strong><%= @booking.status%><strong></span></p>
         <% end %>
 
         <p><U>Booking details</U>:</p>
@@ -29,15 +29,15 @@
         <% else %>
         <% end %>
       </article>
-      <%= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @plant.photos.first.key,class:"mt-5", height: 200, width: 300, crop: :fill %>
     </div>
 
 
   <% else %>
     <h2 class="titre-section text-center mb-4">Manage booking</h2>
     <div class="cont-plant">
-      <article class="article-plant mt-2">
-        <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
+      <article class="article-plant mt-2" style="width">
+        <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d/%m/%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d/%m/%Y') %></strong>.</p>
 
 
         <% if @booking.status == "Waiting" %>
@@ -65,10 +65,7 @@
 
 
       </article>
-      <%= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @plant.photos.first.key, class:"image-plant", height: 200, width: 300, crop: :fill %>
     </div>
   <% end %>
 </div>
-
-<%# Afficher le statut du booking et le mettre à jour
-Affichage différent pour le owner %>
