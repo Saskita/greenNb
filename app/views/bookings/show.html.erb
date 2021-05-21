@@ -63,10 +63,11 @@
         <p>Plant location: <%= @plant.address %> </p>
         <p><i class="fas fa-seedling mr-2"></i> <%= link_to " Back to dashboard", dashboard_path %></p>
 
-      <% end %>
+
       </article>
-      <%#= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @plant.photos.first.key, height: 300, width: 400, crop: :fill %>
     </div>
+  <% end %>
 </div>
 
 <%# Afficher le statut du booking et le mettre à jour
