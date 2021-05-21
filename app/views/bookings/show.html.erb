@@ -1,8 +1,8 @@
-<div class="show-plant min-h-container form-container">
+<div class="show-plant min-h-container">
   <% if @booking.plant.user != current_user %>
     <h2 class="titre-section text-center mb-1 mt-2">Your Booking</h2>
 
-    <div class="cont-plant bg-white m-5">
+    <div class="cont-plant">
       <article class="article-plant mt-5" style="width: 50%">
         <p>Dear Jean, you have just booked Saskia's <strong><%= @plant.name %></strong>, from <strong><%= @booking.start_date.strftime('%d-%m-%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d-%m-%Y') %></strong>.</p>
 
@@ -20,11 +20,11 @@
         <% if @booking.plant.user == current_user %>
           <%= simple_form_for @booking do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 'Accepted' } %>
-            <%= f.submit "Accept" %>
+            <%= f.submit "Accept"%>
           <% end %>
           <%= simple_form_for @booking do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 'Declined' } %>
-            <%= f.submit "Decline" %>
+            <%= f.submit "Decline"%>
           <% end %>
         <% else %>
         <% end %>
@@ -35,7 +35,7 @@
 
   <% else %>
     <h2 class="titre-section text-center mb-4">Manage booking</h2>
-    <div class="cont-plant bg-white m-5">
+    <div class="cont-plant">
       <article class="article-plant mt-2" style="width">
         <p>You have a pending booking for the <strong><%= @plant.name %></strong> plant, from <strong><%= @booking.start_date.strftime('%d/%m/%Y') %></strong> to <strong><%= @booking.end_date.strftime('%d/%m/%Y') %></strong>.</p>
 
