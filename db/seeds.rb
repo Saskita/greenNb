@@ -14,8 +14,15 @@ User.destroy_all
 
 puts "Database cleaned, now create users"
 
-saskia = User.create!(first_name: "Saskia", last_name: "Aardenburg", email: "saskia@gmail.com", password: "123456")
-jean = User.create!(first_name: "Jean", last_name: "Dumas", email: "jean@gmail.com", password: "123456")
+saskia = User.new(first_name: "Saskia", last_name: "Aardenburg", email: "saskia@gmail.com", password: "123456")
+file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621590954/saskia_1_awvrf7.jpg')
+saskia.avatar.attach(io: file, filename: 'saskia.jpg', content_type: 'image/jpg')
+saskia.save!
+
+jean = User.new(first_name: "Jean", last_name: "Dumas", email: "jean@gmail.com", password: "123456")
+file = URI.open('https://res.cloudinary.com/di1e8ocfv/image/upload/v1621590954/jean_1_q38kqw.jpg')
+jean.avatar.attach(io: file, filename: 'jean.jpg', content_type: 'image/jpg')
+jean.save!
 
 puts "User created, now create plants"
 
