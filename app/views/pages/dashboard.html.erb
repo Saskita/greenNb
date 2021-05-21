@@ -38,10 +38,10 @@
         <li class="mb-3">
           <%= cl_image_tag plant.photos.first.key, height: 40, width: 40, crop: :fill, class: "avatar mr-2" %>
           <%= link_to "#{plant.name.split.map(&:capitalize).join(' ')}", plant_path(plant) %>
-          • <%= link_to edit_plant_path(@plant) do %>
-          <i class="fas fa-pen ml-2 mr-2"></i>
+          • <%= link_to edit_plant_path(plant) do %>
+            <i class="fas fa-pen ml-2 mr-2"></i>
           <% end  %>
-          <%= link_to plant_path(@plant), method: :delete, data: { confirm: "Are you sure ?"} do %>
+          <%= link_to plant_path(plant), method: :delete, data: { confirm: "Are you sure ?"} do %>
           <i class="far fa-trash-alt"></i>
           <% end  %>
           <%# <i class="fas fa-seedling"></i> %>
@@ -54,10 +54,10 @@
 
     <div class="dash-box manage">
       <div class="photo-profil">
-        <h3 class="titre-section small-title mt-2 mb-4">My Profil</h3>
-        <%# <%= cl_image_tag current_user.avatar.key, class:"avatar mt-2 mb-4" %>
+        <h3 class="titre-section small-title mt-2 mb-4">My Profile</h3>
+        <%= cl_image_tag current_user.avatar.key, class:"avatar mt-2 mb-4" %>
       </div>
-      <a class="btn btn-success mb-2" href="">Edit profil <i class="fas fa-pen ml-2"></i></a>
+      <a class="btn btn-success mb-2" href="">Edit profile <i class="fas fa-pen ml-2"></i></a>
     </div>
   </div>
 </div>
